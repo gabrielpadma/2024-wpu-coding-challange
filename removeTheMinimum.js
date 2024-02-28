@@ -1,6 +1,4 @@
-const removeSmallest = (numbers) => {
-  const min = Math.min(...numbers);
-  return numbers.slice().splice(numbers.indexOf(min), 1);
-};
-
-console.log(removeSmallest([1, 2, 3, 4, 5]));
+const removeSmallest = (numbers) =>
+  numbers
+    .slice(0, numbers.indexOf(Math.min(...numbers)))
+    .concat(numbers.slice(numbers.indexOf(Math.min(...numbers)) + 1));
